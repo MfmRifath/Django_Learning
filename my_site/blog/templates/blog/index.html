@@ -1,16 +1,76 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block title %}
     My Blog
 {% endblock %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock %}
 
 {% block content %}
-    <h1>Blog</h1>
+<header id='main-navigation'>
+    <h1>
+        <a href=''>Rifath's Blog</a>
+    <h1>
+    <nav>
+    
+            <a href="">All Post</a>
+            <a href="">New Post</a>
+        
+    </nav>
+</header>
+<section id='welcome'>
+    <header>
+        <img src="" alt="Rifath - The Author of this blog">
+        <h2>RIFATH'S BLOG</h2>
+        <p>
+            This is a blog where I write about things that interest me. I hope you find something interesting here.
+        </p>
+    </header>
+</section>
+<section id= 'latest-posts'>
+    <header>
+        <h2>Latest Post</h2>
+    </header>
     <ul>
-        {% for post in posts %}
-            <li>
-                <a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a>
-            </li>
-        {% endfor %}
+        <li>
+            <article class='post'>
+                <a src=''>
+                    <img src='' alt='Mountain Hiking'/>
+                </a>
+                <div class='post__content'>
+                    <h3>
+                        <a href=''>Mountain Hiking</a>
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                    </p>
+                    <footer>
+                        <p>
+                            <time datetime='2021-09-01'>September 1, 2021</time>
+                        </p>
+                    </footer>
+
+                </div>
+            </article>
+        </li>
     </ul>
+
+</section>
+
+<section id='about'>
+    <h1>What I do?</h1>
+<p>
+    I am a software engineer who loves to write code and learn new things. 
+    I am passionate about technology and how it can be used to solve real-world problems.
+    I have experience in web development, mobile app development, and cloud computing. 
+    I am always looking for new challenges and opportunities to grow as a developer.
+</p>
+<p>
+    In this blog, I write about my experiences, thoughts, and ideas related to technology and software development. 
+    I hope you find something useful here and enjoy reading my posts.
+</p>
+</section>
 {% endblock %}
